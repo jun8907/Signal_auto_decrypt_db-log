@@ -15,6 +15,15 @@ python decrypt_db.py
 
 <br><br>
 
+## 📖 관련 라이브러리 설치
+
+```bash
+pip install pycryptodome
+pip install sqlcipher3-wheels
+```
+
+<br><br>
+
 ## 🔧 코드 설명
 
 - pull.py
