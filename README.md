@@ -7,6 +7,8 @@
 ## 🧪 사용법
 
 ```bash
+git clone https://github.com/jun8907/Signal_auto_descrypt_db.git
+cd Signal_auto_descrypt_db
 python pull.py
 python decrypt_db.py
 ```
