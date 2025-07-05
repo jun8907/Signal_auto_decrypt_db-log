@@ -80,6 +80,7 @@ Android 기기에서 추출한 Signal 메신저의 `persistent.sqlite` 키스토
 
 Android의 Signal 메신저에서 추출한 설정 파일 (`shared_prefs`)과 키 저장소(`persistent.sqlite`)를 이용하여, SQLCipher로 암호화된 Signal DB의 복호화 키(SQLCipher Key)를 자동으로 복원해주는 코드 입니다.
 <br><br>
+<br><br>
 ### descrypt_db.py
 
 암호화된 Signal 데이터베이스(`signal.db`, `signal-logs.db`)를 복호화하여 일반 SQLite 형식으로 변환 및 저장해주는 코드 입니다.
