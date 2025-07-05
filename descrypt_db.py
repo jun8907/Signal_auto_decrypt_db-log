@@ -1,7 +1,7 @@
 from sqlcipher3 import dbapi2 as sqlcipher
 import sqlite3
 import os
-from deskey import get_sqlcipher_key
+from descrypt_key import get_sqlcipher_key
 
 def decrypt_and_export_db(encrypted_db_path, output_db_path, key_plaintext):
     try:

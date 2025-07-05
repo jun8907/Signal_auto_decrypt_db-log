@@ -1,4 +1,4 @@
-from pref_database_encrypted_secret import extract_and_convert_data_iv
+from preferences import extract_and_convert_data_iv
 from persistent import extract_all_signalsecret_keys
 from Crypto.Cipher import AES
 
