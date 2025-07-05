@@ -1,4 +1,4 @@
-# Signal_auto_descrypt_mms 🔐
+# Signal_auto_descrypt_db 🔐
 
 복호화되지 않은 Signal 메신저의 signal.db, signal-logs.db 파일을 복호화하는 코드입니다.
 
