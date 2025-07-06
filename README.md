@@ -1,4 +1,4 @@
-# Signal_auto_descrypt_db 🔐
+# Signal_auto_descrypt_db-log 🔐
 
 복호화되지 않은 Signal 메신저의 signal.db, signal-logs.db 파일을 복호화하는 코드입니다.
 
@@ -7,8 +7,8 @@
 ## 🧪 사용법
 
 ```bash
-git clone https://github.com/jun8907/Signal_auto_descrypt_db.git
-cd Signal_auto_descrypt_db
+git clone https://github.com/jun8907/Signal_auto_descrypt_db-log.git
+cd Signal_auto_descrypt_db-log
 python pull.py
 python decrypt_db.py
 ```
