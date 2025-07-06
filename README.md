@@ -1,4 +1,4 @@
-# Signal_auto_descrypt_mms 🔐
+# Signal_auto_descrypt_db-log 🔐
 
 복호화되지 않은 Signal 메신저의 signal.db, signal-logs.db 파일을 복호화하는 코드입니다.
 
@@ -7,8 +7,19 @@
 ## 🧪 사용법
 
 ```bash
+git clone https://github.com/jun8907/Signal_auto_descrypt_db-log.git
+cd Signal_auto_descrypt_db-log
 python pull.py
 python decrypt_db.py
+```
+
+<br><br>
+
+## 📖 관련 라이브러리 설치
+
+```bash
+pip install pycryptodome
+pip install sqlcipher3-wheels
 ```
 
 <br><br>
@@ -20,7 +31,7 @@ python decrypt_db.py
 - persistent.py
 - descrypt_key.py
 - descrypt_db.py
-
+<br><br>
 ### pull.py
 
 루팅된 Android 디바이스에서 Signal 메신저의 db 파일 및 복호화에 필요한 핵심 파일들을 자동으로 추출하는 코드입니다.
@@ -45,8 +56,8 @@ db 파일과 복호화에 필요한 파일들은 `extracted_files/` 디렉터리
 /sdcard/persistent.sqlite: 1 file pulled, 0 skipped. 4.2 MB/s (139264 bytes in 0.032s)
 [+] 추출 완료: extracted_files\persistent.sqlite
 ```
-
-### preferences_attachment, database.py
+<br><br>
+### preferences.py
 
 Signal 메신저의 /share_pref/org.thoughtcrime.securesms_preferences.xml 파일에서 SQLCipher에 사용된 패스프레이즈를 추출
 - `data (hex)`
@@ -61,7 +72,7 @@ Signal 메신저의 /share_pref/org.thoughtcrime.securesms_preferences.xml 파�
 [+] GCM tag (hex)    : 1cd5fd259b07db76d62b7f8238af4ea4
 [+] iv (base64)      : bfOgEB/EMhcm8rOh
 ```
-
+<br><br>
 ### persistent.py
 
 Android 기기에서 추출한 Signal 메신저의 `persistent.sqlite` 키스토어 DB에서 `SignalSecret` alias에 해당하는 복호화 키(16바이트)를 자동으로 추출하는 코드입니다.
@@ -73,11 +84,16 @@ Android 기기에서 추출한 Signal 메신저의 `persistent.sqlite` 키스토
 [+] SignalSecret #2 id: 6456924783388765775
     → 추출된 복호화 키 (16바이트 hex): d843d662011f92d82c69659c4311904f
 ```
-
+<br><br>
 ### descrypt_key.py
 
 Android의 Signal 메신저에서 추출한 설정 파일 (`shared_prefs`)과 키 저장소(`persistent.sqlite`)를 이용하여, SQLCipher로 암호화된 Signal DB의 복호화 키(SQLCipher Key)를 자동으로 복원해주는 코드 입니다.
 
+```python
+[실행 결과]
+[+] 복호화 성공! SQLCipher Key (hex): 9a177c5296dedc24cf72cd563c39d3234e616f4ab2c596696ed27411d65fde94
+```
+<br><br>
 ### descrypt_db.py
 
 암호화된 Signal 데이터베이스(`signal.db`, `signal-logs.db`)를 복호화하여 일반 SQLite 형식으로 변환 및 저장해주는 코드 입니다.
