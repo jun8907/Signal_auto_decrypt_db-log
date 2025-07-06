@@ -57,7 +57,7 @@ db 파일과 복호화에 필요한 파일들은 `extracted_files/` 디렉터리
 [+] 추출 완료: extracted_files\persistent.sqlite
 ```
 <br><br>
-### preferences_attachment, database.py
+### preferences.py
 
 Signal 메신저의 /share_pref/org.thoughtcrime.securesms_preferences.xml 파일에서 SQLCipher에 사용된 패스프레이즈를 추출
 - `data (hex)`
