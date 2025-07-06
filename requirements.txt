@@ -1,0 +1,2 @@
+pycryptodome
+sqlcipher3-wheels
