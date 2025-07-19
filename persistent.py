@@ -5,7 +5,7 @@ def extract_all_signalsecret_keys(sqlite_path):
         conn = sqlite3.connect(sqlite_path)
         cursor = conn.cursor()
 
-        # 1. SignalSecret alias 가진 모든 keyentry.id 가져오기
+        
         cursor.execute("SELECT id FROM keyentry WHERE alias = 'SignalSecret'")
         results = cursor.fetchall()
 
@@ -17,7 +17,7 @@ def extract_all_signalsecret_keys(sqlite_path):
         for idx, (key_id,) in enumerate(results):
             print(f"[+] SignalSecret #{idx+1} id: {key_id}")
 
-            # 2. blobentry에서 해당 BLOB 추출
+            
             cursor.execute("SELECT blob FROM blobentry WHERE keyentryid = ?", (key_id,))
             blob_result = cursor.fetchone()
             if not blob_result:
@@ -40,7 +40,7 @@ def extract_all_signalsecret_keys(sqlite_path):
         print(f"[!] 오류 발생: {e}")
         return []
 
-# 사용 예시
+
 if __name__ == "__main__":
     sqlite_path = "extracted_files/persistent.sqlite"
     extract_all_signalsecret_keys(sqlite_path)

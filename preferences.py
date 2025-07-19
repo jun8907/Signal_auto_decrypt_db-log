@@ -12,12 +12,12 @@ def extract_and_convert_data_iv(xml_path):
                 json_str = elem.text
                 data_obj = json.loads(json_str)
 
-                # base64 디코딩
+                
                 data_bytes = base64.b64decode(data_obj["data"])
                 iv_b64 = data_obj["iv"]
                 iv_bytes = base64.b64decode(iv_b64)
 
-                # 분리
+                
                 ciphertext = data_bytes[:-16]
                 gcm_tag = data_bytes[-16:]
 
@@ -35,7 +35,7 @@ def extract_and_convert_data_iv(xml_path):
         print(f"[!] 오류 발생: {e}")
         return None, None, None
 
-# 사용 예시
+
 if __name__ == "__main__":
     xml_path = "extracted_files/org.thoughtcrime.securesms_preferences.xml"
     extract_and_convert_data_iv(xml_path)

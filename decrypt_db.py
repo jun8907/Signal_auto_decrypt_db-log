@@ -79,7 +79,7 @@ def decrypt_and_export_db(encrypted_db_path, output_db_path, key_plaintext):
                     for row in rows:
                         out = []
                         for col, val in zip(cols, row):
-                            # message 테이블의 message_extras 컬럼만 HEX 뷰로
+                            
                             if table == 'message' and col == 'message_extras' and isinstance(val, (bytes, bytearray)):
                                 hexstr = val.hex()
                                 hexpairs = ' '.join(hexstr[i:i+2] for i in range(0, len(hexstr), 2))
@@ -98,7 +98,7 @@ def decrypt_and_export_db(encrypted_db_path, output_db_path, key_plaintext):
                     row_elem = ET.SubElement(root, table)
                     for col_name, value in zip(cols, row):
                         col_elem = ET.SubElement(row_elem, col_name)
-                        # XML에서도 message_extras HEX 뷰로 처리
+                        
                         if table == 'message' and col_name == 'message_extras' and isinstance(value, (bytes, bytearray)):
                             hexstr = value.hex()
                             hexpairs = ' '.join(hexstr[i:i+2] for i in range(0, len(hexstr), 2))

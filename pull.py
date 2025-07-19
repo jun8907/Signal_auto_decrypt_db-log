@@ -20,18 +20,18 @@ def pull_all_artifacts():
     os.makedirs("extracted_files", exist_ok=True)
 
     package = "org.thoughtcrime.securesms"
-    # 1. shared_prefs
+    
     su_pull(f"/data/data/{package}/shared_prefs/{package}_preferences.xml", f"{package}_preferences.xml")
     
-    # 2. signal.db
+    
     su_pull(f"/data/data/{package}/databases/signal.db", "signal.db")
 
-    # 3. signal-logs.db
+    
     su_pull(f"/data/data/{package}/databases/signal-logs.db", "signal-logs.db")
 
-    # 4. persistent.sqlite
+    
     su_pull("/data/misc/keystore/persistent.sqlite", "persistent.sqlite")
 
-# 실행
+
 if __name__ == "__main__":
     pull_all_artifacts()
