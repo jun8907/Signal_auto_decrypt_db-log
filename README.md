@@ -7,11 +7,11 @@
 ## 🧪 사용법
 
 ```bash
-git clone https://github.com/jun8907/Signal_auto_decrypt_db-log.git
-cd Signal_auto_decrypt_db-log
-pip install -r requirements.txt
-python pull.py
-python decrypt_db.py
+> git clone https://github.com/jun8907/Signal_auto_decrypt_db-log.git
+> cd Signal_auto_decrypt_db-log
+> pip install -r requirements.txt
+> python pull.py
+> python decrypt_db.py
 ```
 
 <br><br>
@@ -19,8 +19,8 @@ python decrypt_db.py
 ## 📖 관련 라이브러리 설치
 
 ```bash
-pip install pycryptodome
-pip install sqlcipher3-wheels
+> pip install pycryptodome
+> pip install sqlcipher3-wheels
 ```
 
 <br><br>
